@@ -1,0 +1,22 @@
+{
+    "rootPath":"/",
+    "debug":true,
+    "release":false,
+    "salt":"",
+    
+    "logs":{
+        "on":true,
+        "path":"./logs/log.log"
+    },
+    "postgresql":{
+        "host":"localhost",
+        "login":"",
+        "password":"",
+        "name":""
+    },
+
+    "telegram":{
+        "token":"",
+        "webhook":true
+    }
+}
