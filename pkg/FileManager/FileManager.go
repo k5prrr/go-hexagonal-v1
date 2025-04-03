@@ -377,4 +377,3 @@ func copyFile(src, dst string) (bool, error) {
 
 	return true, nil
 }
-

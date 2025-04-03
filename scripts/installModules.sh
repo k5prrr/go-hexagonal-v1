@@ -2,7 +2,8 @@
 
 libraries=(
     "Init App|go mod init App"
-    "Gin Server|go get -u github.com/gin-gonic/gin"
+    #"Gin Server|go get -u github.com/gin-gonic/gin"
+    "chi Server|go get -u github.com/go-chi/chi/v5"
     "Postgres|go get -u gorm.io/driver/postgres"
     "Kafka by confluentinc|go get -u github.com/confluentinc/confluent-kafka-go/kafka && go get -u github.com/confluentinc/confluent-kafka-go/v2/kafka"
     #"MySQL|go get -u github.com/go-sql-driver/mysql"

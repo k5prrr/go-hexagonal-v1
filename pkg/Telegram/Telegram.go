@@ -116,9 +116,6 @@ func (telegram *Telegram) SendPhoto(chatID int, urlPhoto string, message string,
 	return string(responseBody), nil
 }
 
-
-
-
 type InputMessage struct {
 	UpdateID int `json:"update_id"`
 	Message  struct {
@@ -180,7 +177,3 @@ func (simpleInputMessage *SimpleInputMessage) New(inputMessage *InputMessage) {
 	}
 
 }
-
-
-
-

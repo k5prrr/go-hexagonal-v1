@@ -202,4 +202,3 @@ func Float(name string) (float64, error) {
 		return 0, fmt.Errorf("unsupported type '%s' for key '%s'", reflect.TypeOf(v).String(), name)
 	}
 }
-
