@@ -51,8 +51,8 @@ func (telegram *Telegram) SendMassage(chatID int, message string, replyMarkup st
 
 	response, err := http.Post(
 		telegram.botUrl("sendMessage"),
-		"application/json",
-		bytes.NewBuffer(messageJson),
+				   "application/json",
+			    bytes.NewBuffer(messageJson),
 	)
 	//fmt.Println(telegram.botUrl("sendMessage"))
 	if err != nil {
@@ -94,8 +94,8 @@ func (telegram *Telegram) SendPhoto(chatID int, urlPhoto string, message string,
 
 	response, err := http.Post(
 		telegram.botUrl("sendPhoto"),
-		"application/json",
-		bytes.NewBuffer(messageJson),
+				   "application/json",
+			    bytes.NewBuffer(messageJson),
 	)
 	//fmt.Println(telegram.botUrl("sendMessage"))
 	if err != nil {
@@ -150,6 +150,7 @@ func (inputMessage *InputMessage) New(inputBodyBytes *[]byte) error {
 	return json.Unmarshal(*inputBodyBytes, inputMessage)
 }
 
+
 type SimpleInputMessage struct {
 	ChatID      int      `json:"chat_id"`
 	MessageID   int      `json:"message_id"`
@@ -158,7 +159,7 @@ type SimpleInputMessage struct {
 	Text        string   `json:"text"`
 }
 
-func (simpleInputMessage *SimpleInputMessage) New(inputMessage *InputMessage) {
+func (simpleInputMessage *SimpleInputMessage) FromInputMessage(inputMessage *InputMessage) {
 	//fmt.Println(inputMessage)
 	simpleInputMessage.ChatID = inputMessage.Message.Chat.ID
 	simpleInputMessage.MessageID = inputMessage.Message.MessageID
@@ -176,4 +177,9 @@ func (simpleInputMessage *SimpleInputMessage) New(inputMessage *InputMessage) {
 		}
 	}
 
+}
+func (simpleInputMessage *SimpleInputMessage) New(inputBodyBytes *[]byte) {
+	inputMessage := &InputMessage{}
+	inputMessage.New(inputBodyBytes)
+	simpleInputMessage.FromInputMessage(inputMessage)
 }
