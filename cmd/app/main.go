@@ -1,9 +1,9 @@
 package main
 
 import (
-	"App/internal/App"
+	"app/internal/app"
 )
 
 func main() {
-	App.Main()
+	app.Main()
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 libraries=(
-    "Init App|go mod init App"
+    "Init App|go mod init app"
     #"Gin Server|go get -u github.com/gin-gonic/gin"
     "chi Server|go get -u github.com/go-chi/chi/v5"
     "Postgres|go get -u gorm.io/driver/postgres"

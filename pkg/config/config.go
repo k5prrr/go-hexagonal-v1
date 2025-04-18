@@ -1,7 +1,7 @@
 /*
 value, err := Config.Int("name/name")
 */
-package Config
+package config
 
 import (
 	"encoding/json"

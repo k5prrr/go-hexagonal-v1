@@ -8,6 +8,9 @@
         "on":true,
         "path":"./logs/log.log"
     },
+    "server":{
+        "port":":8081"
+    },
     "postgresql":{
         "host":"localhost",
         "login":"",

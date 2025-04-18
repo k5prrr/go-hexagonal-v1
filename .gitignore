@@ -1,1 +1,4 @@
 configs0/
+go.sum
+go.mod
+logs0/
