@@ -3,18 +3,16 @@ package services
 import (
 	//"errors"
 	//"app/internal/models"
-	"fmt"
+	"app/pkg/config"
 	"app/pkg/telegram"
+	"fmt"
 )
 
-
-
 type Services struct {
-	Telegram *telegram.Telegram
+	Telegram   *telegram.Telegram
+	Config     *config.Config
 	TestSpeedI int64
 }
-
-
 
 func (s *Services) TestSpeed() (string, error) {
 	s.TestSpeedI++
@@ -22,4 +20,3 @@ func (s *Services) TestSpeed() (string, error) {
 	//return fmt.Errorf("ошибка: %s", "что-то пошло не так555")
 
 }
-

@@ -1,15 +1,14 @@
 package controllers
 
 import (
-	"net/http"
-	"log"
-	"fmt"
 	"app/internal/services"
+	"fmt"
+	"log"
+	"net/http"
 )
 
 type Controller struct {
 	services *services.Services
-
 }
 
 func New(services *services.Services) *Controller {

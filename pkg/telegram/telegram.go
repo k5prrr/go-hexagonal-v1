@@ -51,8 +51,8 @@ func (telegram *Telegram) SendMassage(chatID int, message string, replyMarkup st
 
 	response, err := http.Post(
 		telegram.botUrl("sendMessage"),
-				   "application/json",
-			    bytes.NewBuffer(messageJson),
+		"application/json",
+		bytes.NewBuffer(messageJson),
 	)
 	//fmt.Println(telegram.botUrl("sendMessage"))
 	if err != nil {
@@ -94,8 +94,8 @@ func (telegram *Telegram) SendPhoto(chatID int, urlPhoto string, message string,
 
 	response, err := http.Post(
 		telegram.botUrl("sendPhoto"),
-				   "application/json",
-			    bytes.NewBuffer(messageJson),
+		"application/json",
+		bytes.NewBuffer(messageJson),
 	)
 	//fmt.Println(telegram.botUrl("sendMessage"))
 	if err != nil {
@@ -149,7 +149,6 @@ type InputMessage struct {
 func (inputMessage *InputMessage) New(inputBodyBytes *[]byte) error {
 	return json.Unmarshal(*inputBodyBytes, inputMessage)
 }
-
 
 type SimpleInputMessage struct {
 	ChatID      int      `json:"chat_id"`
