@@ -1,32 +1,25 @@
 package services
 
 import (
-	"errors"
-	"my-go-app/internal/models"
+	//"errors"
+	//"app/internal/models"
+	"fmt"
+	"app/pkg/telegram"
 )
 
-// Временное хранилище пользователей
-var users = []models.User{
-	{ID: 1, Name: "User1"},
-	{ID: 2, Name: "User2"},
+
+
+type Services struct {
+	Telegram *telegram.Telegram
+	TestSpeedI int64
 }
 
-// Получение всех пользователей
-func GetAllUsers() []models.User {
-	return users
+
+
+func (s *Services) TestSpeed() (string, error) {
+	s.TestSpeedI++
+	return fmt.Sprintf("123 %d", s.TestSpeedI), nil
+	//return fmt.Errorf("ошибка: %s", "что-то пошло не так555")
+
 }
 
-// Получение пользователя по ID
-func GetUserByID(id int) (*models.User, error) {
-	for _, user := range users {
-		if user.ID == id {
-			return &user, nil
-		}
-	}
-	return nil, errors.New("пользователь не найден")
-}
-
-// Создание нового пользователя
-func CreateUser(user models.User) {
-	users = append(users, user)
-}

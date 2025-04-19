@@ -8,6 +8,8 @@ import (
 	"time"
 	"net/http"
 	"app/internal/routes"
+	"app/internal/services"
+	"app/pkg/telegram"
 )
 var logFile *os.File
 
@@ -30,13 +32,23 @@ func Main() {
 	if err != nil {
 		log.Fatalf("Ошибка при получении порта: %v", err)
 	}
+	telegramToken, err := config.String("telegram/token")
+	if err != nil {
+		log.Fatalf("Ошибка при получении телеграм токена: %v", err)
+	}
 
-	telegram := Telegram.New(&Telegram.TelegramConfig{
-		Token: "123",
+	telegram := telegram.New(&telegram.TelegramConfig{
+		Token: telegramToken,
 	})
 
+
+	services := &services.Services{
+		Telegram: telegram,
+	}
+
+
 	// Установки роутов и запуск
-	router := routes.SetupRoutes()
+	router := routes.Setup(services)
 	fmt.Println("Start")
 	log.Fatalf("Ошибка серверв %v", http.ListenAndServe(port, router))
 }
