@@ -4,14 +4,11 @@ import (
 	"app/internal/routes"
 	"app/internal/services"
 	"app/pkg/config"
+	"app/pkg/server"
 	"app/pkg/telegram"
-	"context"
 	"fmt"
 	"log"
-	"net/http"
 	"os"
-	"os/signal"
-	"syscall"
 	"time"
 )
 
@@ -41,35 +38,23 @@ func Main() {
 		log.Fatalf("Ошибка при получении телеграм токена: %v", err)
 	}
 
+	// Создаём объекты
 	telegram := telegram.New(&telegram.TelegramConfig{
 		Token: telegramToken,
 	})
 
+	// Перекидываем объекты в сервис
 	services := &services.Services{
 		Telegram: telegram,
 		Config:   conf,
 	}
 
-	// Установки роутов и запуск
+	// Настройка роутера
 	router := routes.Setup(services)
-	fmt.Println("Start")
+	fmt.Println("Started")
+	log.Println("Started")
 
-	server := &http.Server{
-		Addr:    addr,
-		Handler: router,
-	}
-	go func() {
-		if err := server.ListenAndServe(); err != nil {
-			log.Fatal("Server error: ", err)
-		}
-	}()
-
-	// Обработка сигналов для корректного завершения
-	quit := make(chan os.Signal, 1)
-	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
-	<-quit
-
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-	server.Shutdown(ctx)
+	// Запуск сервера
+	srv := server.New(addr, router)
+	srv.Run()
 }

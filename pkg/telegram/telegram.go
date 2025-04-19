@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strconv"
 )
@@ -65,7 +65,7 @@ func (telegram *Telegram) SendMassage(chatID int, message string, replyMarkup st
 	}
 
 	// Читаем тело ответа
-	responseBody, err := ioutil.ReadAll(response.Body)
+	responseBody, err := io.ReadAll(response.Body)
 	if err != nil {
 		return "", err
 	}
@@ -108,7 +108,7 @@ func (telegram *Telegram) SendPhoto(chatID int, urlPhoto string, message string,
 	}
 
 	// Читаем тело ответа
-	responseBody, err := ioutil.ReadAll(response.Body)
+	responseBody, err := io.ReadAll(response.Body)
 	if err != nil {
 		return "", err
 	}

@@ -5,8 +5,7 @@
     "salt":"",
     
     "logs":{
-        "on":true,
-        "path":"./logs/log.log"
+        "on":true
     },
     "server":{
         "addr":":8081"

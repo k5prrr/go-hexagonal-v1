@@ -1,25 +1,21 @@
+Это для быстрого старта проекта
 https://github.com/k5prrr/fastStartGO
 
 # Install
 1. micro .gitignore
 2. sh ./scripts/installModules.sh
-
+3. sh scripts/start.sh
 
 # Start
-go fmt ./... && clear && go run ./cmd/App/main.go
-
-
-# Docker
-GOOS=linux go build -o build/appGO cmd/App/main.go
-docker build -t NAME1:v1 .
-docker run -it --rm NAME1:v1 ls -l /build
-5
-
-
+in main dir
 sh scripts/start.sh
-
 http://localhost:8081/testSpeed
 
 
 
-
+# Исправлю
+Приведите имена пакетов к нижнему регистру.
+Пишите сообщения и логи на английском для универсальности.
+Добавьте тесты: В проекте отсутствуют тесты (папка tests пуста).
+Используйте линтеры: Добавьте настройки для golangci-lint в .golangci.yml.
+Документация: Добавьте описание API в api/openapi.yaml и примеры использования в README_API.md.

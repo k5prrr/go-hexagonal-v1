@@ -2,5 +2,5 @@
 
 
 go fmt ./...
-
+clear
 go run cmd/app/main.go
