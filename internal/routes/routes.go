@@ -2,17 +2,24 @@ package routes
 
 import (
 	"app/internal/controllers"
-	"app/internal/services"
+	"app/internal/middleware"
 	"net/http"
-	//"app/internal/middleware"
 )
 
-func Setup(services *services.Services) http.Handler {
-	controllers := controllers.New(services)
+type Routes struct {
+	Mux        *http.ServeMux
+	Controller *controllers.Controller
+	Middleware *middleware.Middleware
+}
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/testSpeed", controllers.TestSpeed)
-	//mux.HandleFunc("/testAuth", controllers.testAuth)
-
-	return mux
+func New(controller *controllers.Controller, middleware *middleware.Middleware) *Routes {
+	return &Routes{
+		Controller: controller,
+		Middleware: middleware,
+		Mux:        http.NewServeMux(),
+	}
+}
+func (r *Routes) Setup() {
+	r.Mux.HandleFunc("/testSpeed", r.Controller.TestSpeed)
+	r.Mux.HandleFunc("/checkAuth", r.Middleware.Auth(r.Controller.TestSpeed))
 }

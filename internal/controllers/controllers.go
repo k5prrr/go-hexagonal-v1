@@ -8,19 +8,19 @@ import (
 )
 
 type Controller struct {
-	services *services.Services
+	Services *services.Services
 }
 
 func New(services *services.Services) *Controller {
 	//fmt.Printf("%v", services)
 	return &Controller{
-		services: services,
+		Services: services,
 	}
 }
 
 func (c *Controller) TestSpeed(w http.ResponseWriter, r *http.Request) {
 	// Теперь можно использовать c.service
-	text, err := c.services.TestSpeed()
+	text, err := c.Services.TestSpeed()
 	if err != nil {
 		log.Printf("Error in testSpeed: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
