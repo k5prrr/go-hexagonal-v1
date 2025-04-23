@@ -22,3 +22,9 @@ http://localhost:8081/testSpeed
 Документация: Добавьте описание API в api/openapi.yaml и примеры использования в README_API.md.
 
 
+Hexagonal architecture! - Сейчас в моде
+
+https://www.youtube.com/watch?v=3YTLDYG5MnQ
+
+https://www.youtube.com/watch?v=0Fhsgmz-Gig
+
