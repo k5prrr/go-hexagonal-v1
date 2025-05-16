@@ -1,5 +1,7 @@
+.env0
 configs0/
 go.sum
 go.mod
-logs/*.txt
-logs/*.log
+logs/
+pg_data/
+

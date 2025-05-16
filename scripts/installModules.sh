@@ -2,9 +2,12 @@
 
 libraries=(
     "Init App|go mod init app"
-    #"Gin Server|go get -u github.com/gin-gonic/gin"
-    "chi Server|go get -u github.com/go-chi/chi/v5"
-    "Postgres|go get -u gorm.io/driver/postgres"
+    "Gin Server|go get -u github.com/gin-gonic/gin"
+    "Chi Server|go get -u github.com/go-chi/chi/v5"
+    "Postgres pgx|go get github.com/jackc/pgx/v5"
+    "Linter golangci-lint|go get -u github.com/golangci/golangci-lint/cmd/golangci-lint@latest"
+    # go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    #"Postgres gorm|go get -u gorm.io/driver/postgres"
     "Kafka by confluentinc|go get -u github.com/confluentinc/confluent-kafka-go/kafka && go get -u github.com/confluentinc/confluent-kafka-go/v2/kafka"
     #"MySQL|go get -u github.com/go-sql-driver/mysql"
     "BD gorm|go get -u gorm.io/gorm"
