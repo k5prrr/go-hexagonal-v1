@@ -1,22 +1,48 @@
 package app
 
 import (
-	"app/internal/adapters/repository"
+	adapterUserRepository "app/internal/adapters/user/repository"
+	"app/internal/domain/user"
+	"app/pkg/database"
 	"app/pkg/env"
+	"fmt"
 	"log"
 )
 
 func Main() {
 
+	// Читаем настройки
 	env := env.New("")
-	dbName, _ := env.String("POSTGRES_DB")
-	dbUser, _ := env.String("POSTGRES_USER")
-	dbPassword, _ := env.String("POSTGRES_PASSWORD")
-
-	userRepo, err := repository.NewUserRepositoryPostgres(dbName, dbUser, dbPassword, "")
+	dbName, err := env.String("POSTGRES_DB")
 	if err != nil {
-		log.Fatalf("failed to initiate dbase connection: %v", err)
+		log.Fatalf("failed env get POSTGRES_DB: %v", err)
 	}
-	defer userRepo.CloseConnection()
+	dbUser, err := env.String("POSTGRES_USER")
+	if err != nil {
+		log.Fatalf("failed env get POSTGRES_USER: %v", err)
+	}
+	dbPassword, err := env.String("POSTGRES_PASSWORD")
+	if err != nil {
+		log.Fatalf("failed env get POSTGRES_PASSWORD: %v", err)
+	}
 
+	// Подключаем базу
+	postgresConnection, err := database.NewPostgresConnection(&database.PostgresConfig{
+		Name:     dbName,
+		User:     dbUser,
+		Password: dbPassword,
+	})
+	if err != nil {
+		log.Fatalf("failed NewPostgresConnection: %v", err)
+	}
+	defer database.ClosePostgresConnection(postgresConnection)
+
+	// Закидываем базу в адаптер
+	userRepositoryPostgres := adapterUserRepository.NewUserRepositoryPostgres(postgresConnection)
+
+	// Подключаем адаптер в сервис
+	userService := user.NewUserService(userRepositoryPostgres)
+	_ = userService
+
+	fmt.Println("Hi")
 }

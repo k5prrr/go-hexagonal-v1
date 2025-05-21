@@ -1,7 +1,7 @@
 package user
 
 import (
-	"app/internal/ports"
+	"fmt"
 	"time"
 )
 
@@ -12,36 +12,30 @@ type User struct {
 	Name       string
 	MiddleName string
 
-	BirthDate time.Time
-	Phone     string
-	Email     string
+	BirthDate      time.Time
+	Phone          string
+	Email          string
+	PhoneConfirmed bool
+	EmailConfirmed bool
 
 	LastLogin time.Time
-
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt time.Time
 
-	key  string
+	Description  string
+	PasswordHash string
+	KeyApi       string
 }
-
-func (u *User) FullName() string {
-	return fmt.Sprintf(
-		"%s %s %s",
-		FamilyName,
-		Name,
-		MiddleName,
-	)
-}
-
-
-
-
 
 func NewUser() *User {
 	return &User{}
 }
-
-func (u *User) Create() {
-	u.Uid = 
+func (u *User) FullName() string {
+	return fmt.Sprintf(
+		"%s %s %s",
+		u.FamilyName,
+		u.Name,
+		u.MiddleName,
+	)
 }

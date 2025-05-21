@@ -1,5 +1,5 @@
 #!/bin/bash
-# sh scripts/createFileForGPT.sh
+# bash scripts/createFileForGPT.sh
 
 OUTPUT_FILE=~/projectForGPT.txt
 EXCLUDE_DIRS=(".git" "pg_data" "configs")
