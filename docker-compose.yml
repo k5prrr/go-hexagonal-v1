@@ -1,19 +1,27 @@
-services:
+version: '3.8'
 
+services:
   db:
     container_name: pg1
     restart: always
-    image: postgres:15.2
+    image: docker.io/postgres:15.2
+    ports:
+      - 15432:5432
     env_file:
       - .env
     volumes:
-      - ./pg_data:/var/lib/postgresql/data
-      - ./migrations:/docker-entrypoint-initdb.d
+      - type: bind
+        source: ./pg_data
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ./migrations
+        target: /docker-entrypoint-initdb.d
+    label:
+      - "z=execmem"
 
   adminer:
     container_name: adminer1
-    image: adminer
+    image: docker.io/library/adminer:latest
     restart: always
     ports:
       - 45010:8080
-

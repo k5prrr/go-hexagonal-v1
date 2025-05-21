@@ -31,3 +31,19 @@ https://www.youtube.com/watch?v=0Fhsgmz-Gig
 https://www.youtube.com/watch?app=desktop&v=yyrvXnXLnU8
 
 covrom
+
+
+sudo apt install podman-compose
+sudo nano /etc/containers/registries.conf
+[registries.search]
+registries = ["docker.io"]
+
+[registries.insecure]
+registries = []
+
+
+mkdir -p ./pg_data ./migrations
+
+sudo podman stop $(sudo podman ps -aq) && sudo podman rm $(sudo podman ps -aq)
+sudo podman-compose up -d
+podman ps -a
