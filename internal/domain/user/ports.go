@@ -4,6 +4,14 @@ import (
 	"context"
 )
 
+type AnyUserService interface {
+	UserByUid(uid string) (*User, error)
+	CreateUser(user *User) (string, error)
+	UpdateUser(user *User) error
+	DeleteByUid(uid string) error
+	AllUsers() ([]*User, error)
+}
+
 type UserRepository interface {
 	All(ctx context.Context) ([]*User, error)
 	Create(ctx context.Context, user *User) (string, error)
