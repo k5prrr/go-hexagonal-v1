@@ -45,5 +45,5 @@ registries = []
 mkdir -p ./pg_data ./migrations
 
 sudo podman stop $(sudo podman ps -aq) && sudo podman rm $(sudo podman ps -aq)
-sudo podman-compose up -d
+podman-compose up -d
 podman ps -a

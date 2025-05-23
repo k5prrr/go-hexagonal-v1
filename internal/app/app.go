@@ -9,9 +9,17 @@ import (
 	"app/pkg/server"
 	"fmt"
 	"log"
+	"os"
+	"time"
 )
 
+var logFile *os.File
+
 func Main() {
+
+	// Настраиваем логи
+	setupLogging()
+	defer logFile.Close()
 
 	// Читаем настройки
 	env := env.New("")
@@ -56,7 +64,12 @@ func Main() {
 
 	// Сервис подключаем в роуты
 	handlers := api.NewHandlers(userService)
-	router := api.NewRoutes(handlers)
+	middleware := api.NewMiddleware(userService)
+	err = middleware.Setup()
+	if err != nil {
+		log.Fatalf("failed middleware.Setup: %v", err)
+	}
+	router := api.NewRoutes(handlers, middleware)
 	router.Setup()
 
 	// Роуты подключаем в сервер
@@ -66,4 +79,14 @@ func Main() {
 	srv.Run()
 	fmt.Println("Stop")
 	log.Println("Stop")
+}
+
+func setupLogging() {
+	var err error
+	logFilename := fmt.Sprintf("./logs/%s.txt", time.Now().Format("2006-01-02_15-04-05"))
+	logFile, err = os.OpenFile(logFilename, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
+	if err != nil {
+		log.Fatalf("Ошибка при открытии файла лога: %v", err)
+	}
+	log.SetOutput(logFile)
 }
