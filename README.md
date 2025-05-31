@@ -1,6 +1,17 @@
 Это для быстрого старта проекта
 https://github.com/k5prrr/fastStartGO
 
+make up
+
+
+
+
+
+
+
+
+# OLD ---
+
 # Install
 1. micro .gitignore
 2. sh ./scripts/installModules.sh

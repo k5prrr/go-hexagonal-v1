@@ -1,0 +1,88 @@
+.
+├── api
+│   └── openapi.yaml
+├── build
+├── cmd
+│   ├── app
+│   │   └── main.go
+│   └── cli
+│       └── main.go
+├── configs
+│   ├── apiKeys.json
+│   └── configs.json
+├── docker-compose0.yml
+├── docker-compose.yml
+├── Dockerfile
+├── docs
+├── go.mod
+├── internal
+│   ├── app
+│   │   ├── adapters
+│   │   │   ├── delegates
+│   │   │   ├── repository
+│   │   │   │   ├── postgres
+│   │   │   │   │   ├── order.go
+│   │   │   │   │   └── user.go
+│   │   │   │   └── redis
+│   │   │   ├── user
+│   │   │   └── web
+│   │   │       ├── handlers.go
+│   │   │       ├── middleware.go
+│   │   │       └── routes.go
+│   │   ├── app.go
+│   │   ├── core
+│   │   │   ├── domains
+│   │   │   │   ├── access
+│   │   │   │   │   └── access.go
+│   │   │   │   └── user
+│   │   │   │       ├── ports.go
+│   │   │   │       ├── service.go
+│   │   │   │       └── user.go
+│   │   │   ├── ports
+│   │   │   ├── services
+│   │   │   └── usecases
+│   │   └── handlers
+│   │       └── converters
+│   └── infrastructure
+├── logs
+├── Makefile
+├── migrations
+│   └── start.sql
+├── pkg
+│   ├── config
+│   │   └── config.go
+│   ├── database
+│   │   └── postgres.go
+│   ├── env
+│   │   └── env.go
+│   ├── fileManager
+│   │   └── FileManager.go
+│   ├── hash
+│   │   └── Hash.go
+│   ├── kafka
+│   │   └── Kafka.go
+│   ├── mysql
+│   │   └── Mysql.go
+│   ├── server
+│   │   └── server.go
+│   ├── telegram
+│   │   └── telegram.go
+│   └── utilities
+│       └── Utilities.go
+├── README_API.md
+├── README.md
+├── scripts
+│   ├── createFileForGPT.sh
+│   ├── installModules.sh
+│   ├── linter.sh
+│   ├── start.sh
+│   ├── stop.sh
+│   ├── updateGO.sh
+│   └── updateModules.sh
+├── static
+├── tests
+│   ├── checkAuth.sh
+│   └── speed.sh
+└── tree.txt
+
+43 directories, 43 files
