@@ -13,7 +13,9 @@ build:
 	go build -o bin/main ./cmd/app
 
 run:
-	go run ./cmd/app
+#	go fmt ./...
+	clear
+	go run cmd/app/main.go
 
 test:
 	go test -v -cover ./...
