@@ -1,8 +1,9 @@
 run:
   timeout: 5m
-  modules-download-mode: mod
   exclude-dirs:
-    - "pg_data"
-    - "pg_data/*"
+    - "./pg_data"
+    - "./pg_data/*"
 linters:
   enable-all: true
+  disable:
+    - tenv

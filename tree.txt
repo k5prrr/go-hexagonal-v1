@@ -1,48 +1,55 @@
 .
-├── api
-│   └── openapi.yaml
 ├── build
 ├── cmd
 │   ├── app
 │   │   └── main.go
-│   └── cli
+│   ├── migrations
+│   │   └── main.go
+│   └── worker
 │       └── main.go
-├── configs
-│   ├── apiKeys.json
-│   └── configs.json
-├── docker-compose0.yml
-├── docker-compose.yml
-├── Dockerfile
+├── config
+│   └── config.go
+├── docker
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   └── podman-compose.yml
 ├── docs
+│   └── README_API.md
 ├── go.mod
+├── go.sum
 ├── internal
 │   ├── app
 │   │   ├── adapters
 │   │   │   ├── delegates
-│   │   │   ├── repository
-│   │   │   │   ├── postgres
-│   │   │   │   │   ├── order.go
-│   │   │   │   │   └── user.go
-│   │   │   │   └── redis
-│   │   │   ├── user
-│   │   │   └── web
-│   │   │       ├── handlers.go
-│   │   │       ├── middleware.go
-│   │   │       └── routes.go
-│   │   ├── app.go
+│   │   │   ├── handlers
+│   │   │   │   ├── converters
+│   │   │   │   ├── middleware.go
+│   │   │   │   ├── order.go
+│   │   │   │   ├── routes.go
+│   │   │   │   └── user.go
+│   │   │   └── repository
+│   │   │       ├── postgres
+│   │   │       │   ├── order.go
+│   │   │       │   └── user.go
+│   │   │       └── redis
 │   │   ├── core
 │   │   │   ├── domains
-│   │   │   │   ├── access
-│   │   │   │   │   └── access.go
-│   │   │   │   └── user
-│   │   │   │       ├── ports.go
-│   │   │   │       ├── service.go
-│   │   │   │       └── user.go
+│   │   │   │   ├── order.go
+│   │   │   │   └── user.go
 │   │   │   ├── ports
+│   │   │   │   ├── adapters.go
+│   │   │   │   ├── ports.go
+│   │   │   │   ├── repositories.go
+│   │   │   │   ├── services.go
+│   │   │   │   └── usecases.go
 │   │   │   ├── services
+│   │   │   │   ├── order.go
+│   │   │   │   ├── readme.md
+│   │   │   │   └── user.go
 │   │   │   └── usecases
-│   │   └── handlers
-│   │       └── converters
+│   │   ├── handlers
+│   │   │   └── converters
+│   │   └── tickers
 │   └── infrastructure
 ├── logs
 ├── Makefile
@@ -69,7 +76,6 @@
 │   │   └── telegram.go
 │   └── utilities
 │       └── Utilities.go
-├── README_API.md
 ├── README.md
 ├── scripts
 │   ├── createFileForGPT.sh
@@ -85,4 +91,4 @@
 │   └── speed.sh
 └── tree.txt
 
-43 directories, 43 files
+43 directories, 49 files

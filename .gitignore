@@ -4,4 +4,4 @@ go.sum
 go.mod
 logs/
 pg_data/
-
+.idea/
