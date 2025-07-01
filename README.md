@@ -1,5 +1,9 @@
 Это для быстрого старта проекта
-https://github.com/k5prrr/fastStartGO
+https://github.com/k5prrr/go-hexagonal-v1
+
+Ещё примеры
+https://github.com/GolangLessons/sso
+
 
 make up
 
