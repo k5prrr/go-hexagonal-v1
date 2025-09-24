@@ -1,14 +1,14 @@
-package Utilities
+package utilities
 
 import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"math/rand"
 	"os"
 	"os/exec"
+	"fmt"
+	"encoding/json"
+	"io/ioutil"
 	"strconv"
 	"time"
+	"math/rand"
 	"unicode"
 )
 
@@ -22,11 +22,14 @@ func OnlyDigits(input string) string {
 	return string(result)
 }
 
+
 func ClearConsole() {
 	cmd := exec.Command("clear") // На Windows используйте "cls"
 	cmd.Stdout = os.Stdout
 	cmd.Run()
 }
+
+
 
 func FormPhone(phone string) string {
 	return fmt.Sprintf("+%s", phone)
@@ -57,27 +60,27 @@ func ReadJson(path string) (*map[string]interface{}, error) {
 
 func IntValue(value interface{}, defaultValue int) int {
 	switch val := value.(type) {
-	case int:
-		return val
-	case float32, float64:
-		return int(val.(float64))
-	case int32, int64:
-		return int(val.(int64))
-	case string:
-		intVal, err := strconv.Atoi(val)
-		if err == nil {
-			return intVal
-		}
+		case int:
+			return val
+		case float32, float64:
+			return int(val.(float64))
+		case int32, int64:
+			return int(val.(int64))
+		case string:
+			intVal, err := strconv.Atoi(val)
+			if err == nil {
+				return intVal
+			}
 	}
 	return defaultValue
 }
 
 func StringValue(value interface{}, defaultValue string) string {
 	switch val := value.(type) {
-	case string:
-		return val
-	case int, int32, int64, float32, float64:
-		return fmt.Sprintf("%v", val)
+		case string:
+			return val
+		case int, int32, int64, float32, float64:
+			return fmt.Sprintf("%v", val)
 	}
 	return defaultValue
 }
@@ -94,6 +97,7 @@ func TimeValue(value interface{}, defaultValue time.Time) time.Time {
 	}
 	return defaultValue
 }
+
 
 // RandomInt generates a random integer between min and max (inclusive).
 func RandomInt(min int, max int) int {
@@ -119,3 +123,7 @@ func RandomString(length int) string {
 
 	return string(result)
 }
+
+
+
+
