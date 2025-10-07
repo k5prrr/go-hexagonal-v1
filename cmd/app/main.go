@@ -1,12 +1,22 @@
 package main
 
 import (
-	"app/pkg/env"
-	"fmt"
+	"context"
+	"log"
+
+	"app/internal/app"
 )
 
 func main() {
-	env := env.New("")
-	fmt.Println(env.Get("POSTGRES_USER", "us1"))
+	ctx := context.Background()
 
+	a, err := app.New()
+	if err != nil {
+		log.Fatalf("Failed to initialize app: %v", err)
+	}
+
+	err = a.Run(ctx)
+	if err != nil {
+		log.Fatalf("Failed to run app: %v", err)
+	}
 }

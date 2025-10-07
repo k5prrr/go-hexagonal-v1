@@ -16,7 +16,7 @@ build:
 run:
 	go fmt ./...
 	clear
-	go run cmd/app/main.go
+	go run cmd/app/main.go || echo "exit code: $?"
 
 test:
 	go test -v -cover ./...
@@ -24,7 +24,7 @@ test:
 
 lint: $(LINT_TARGET)
 	@echo "==> Linting Go code..."
-	@$(LINT_PATH) run --config ./configs/.golangci.yml ./internal/... ./cmd/...
+	@$(LINT_PATH) run --config ./config/.golangci.yml ./internal/... ./cmd/...
 
 installLint:
 	@echo "==> Installing golangci-lint..."

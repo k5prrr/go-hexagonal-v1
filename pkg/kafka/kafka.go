@@ -1,8 +1,9 @@
 package kafka
 
+// go get -u github.com/confluentinc/confluent-kafka-go/kafka && go get -u github.com/confluentinc/confluent-kafka-go/v2/kafka
 // https://www.youtube.com/watch?v=7Hm2RsH8bS8
 // https://www.youtube.com/watch?v=KSej3yivuPY
-
+/*
 import (
 	"fmt"
 	//"strings"
@@ -106,3 +107,4 @@ func (с *Consumer) Start() {
 	}
 }
 
+*/
