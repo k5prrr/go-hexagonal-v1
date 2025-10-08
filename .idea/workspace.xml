@@ -5,48 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea3b26c-dc9f-4e47-bf2c-12d0c0bacffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/old/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.golangci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/.golangci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/start.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/podman-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/delegates/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/delegates/kafka/kafka.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/handlers/middleware.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/handlers/order.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/handlers/routes.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/handlers/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/repository/postgres/order.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/repository/postgres/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/adapters/repository/redis/redis.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/domains/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/domains/order.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/domains/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/ports/adapters.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/ports/ports.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/ports/repositories.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/ports/services.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/ports/usecases.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/services/order.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/services/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/services/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/core/usecases/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/handlers/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/handlers/converters/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/tickers/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/infrastructure/.readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/pkg/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repositories/postgres/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repositories/postgres/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/filemanager/filemanager.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/filemanager/filemanager.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/kafka/kafka.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/kafka/kafka.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/utilities/utilities.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utilities/utilities.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/app/app.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,25 +26,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.GoLinterPluginOnboarding": "true",
-    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/admin/git/go-hexagonal-v1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/admin/git/go-hexagonal-v1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

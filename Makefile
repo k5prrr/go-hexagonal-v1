@@ -1,14 +1,14 @@
 # make run // use
-COMPOSE = docker-compose
+CONTAINER_ENGINE = podman#docker
+COMPOSE = $(CONTAINER_ENGINE)-compose
 BINARY = app
 GOPATH = $(HOME)/go
 LINT_PATH = $(GOPATH)/bin/golangci-lint
-# $HOME/go/bin/golangci-lint --version
-# or $GOPATH/bin/golangci-lint --version
-# or $(GOPATH)/bin/golangci-lint
+
 up:
 	$(COMPOSE) down
-	$(COMPOSE) up -d
+	$(COMPOSE) up -d --build
+	$(CONTAINER_ENGINE) ps -a
 
 build:
 	go build -o bin/main ./cmd/app
@@ -33,6 +33,12 @@ installLint:
 installDebugging:
 	go install github.com/go-delve/delve/cmd/dlv@latest
 
+
+
+
+# $HOME/go/bin/golangci-lint --version
+# or $GOPATH/bin/golangci-lint --version
+# or $(GOPATH)/bin/golangci-lint
 
 # # Libs
 # go mod init app

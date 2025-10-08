@@ -65,7 +65,7 @@ func (a *App) initHTTPServer() error {
 	// mini test
 	var counter uint64
 	// router.HandleFunc("/api/increment", incrementHandler))
-	router.HandleFunc("/api/increment", func(w http.ResponseWriter, r *http.Request) {
+	router.HandleFunc("/api2/increment", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 			return

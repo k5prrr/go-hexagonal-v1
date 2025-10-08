@@ -5,3 +5,4 @@ go.mod
 logs/
 pg_data/
 .idea/
+bin/main
